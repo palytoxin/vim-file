@@ -8,13 +8,16 @@
 "  use 'BundleInstall!' force update plugins
 " ========================================================================
 
+"自动语法高亮
+syntax on
 "去除边框
 set go=
-" 主题
-"color desert
-colorscheme delek
 " 背景色
-set background=light
+"set background=light
+set background=dark
+" 主题
+colorscheme solarized
+let g:solarized_termcolors=256
 "字体
 "set guifont=Monaco:h10
 "搜索高亮
@@ -23,8 +26,6 @@ set hlsearch
 set mouse=a
 "关闭兼容模式
 set nocompatible
-"自动语法高亮
-syntax on
 "检测文件类型
 filetype on
 "检测文件插件类型
@@ -80,6 +81,7 @@ Plugin 'bling/vim-airline'
 Plugin 'FencView.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
 
 filetype plugin indent on     " required
 " To ignore plugin indent changes, instead use:

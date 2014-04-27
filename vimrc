@@ -8,6 +8,10 @@
 "  use 'BundleInstall!' force update plugins
 " ========================================================================
 
+" 设置文件编码
+set fenc=utf-8
+" 设置文件编码检测类型及支持格式
+set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 "自动语法高亮
 syntax on
 "去除边框
@@ -81,7 +85,9 @@ Plugin 'bling/vim-airline'
 Plugin 'FencView.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 filetype plugin indent on     " required
 " To ignore plugin indent changes, instead use:
@@ -122,9 +128,15 @@ map <S-Right> :tabn<CR>
 
 "========================>NerdTree
 nnoremap <F8> :silent! NERDTreeToggle<CR>
+"I can close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "========================> Syntastic setting
 let g:syntastic_check_on_open=1
 
+"========================> SnipMateLoadScope
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
 
 "========================>Next...

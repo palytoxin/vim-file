@@ -150,6 +150,9 @@ let g:airline_theme                      = "bubblegum" "设定主题
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 
+"========================> easymotion
+let g:EasyMotion_leader_key = '<Leader>' 
+
 "========================>Smart way to move between windows
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k

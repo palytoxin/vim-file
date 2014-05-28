@@ -57,9 +57,9 @@ filetype indent on
 set number
 
 "tab长度
-set tabstop=4
+set tabstop=2
 "缩进宽度为4
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
 
 "覆盖文件无备份

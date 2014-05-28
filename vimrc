@@ -79,6 +79,8 @@ set history=60
 set cursorline
 "无交临时换文件
 set noswapfile
+"show cmd
+set showcmd
 
 " ctrl+o for LRU buffer
 map <c-o> :CtrlPBuffer<CR>

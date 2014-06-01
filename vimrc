@@ -124,6 +124,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'mileszs/ack.vim'
 
 filetype plugin indent on     " required
 " To ignore plugin indent changes, instead use:

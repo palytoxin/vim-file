@@ -56,6 +56,8 @@ filetype indent on
 "显示行号
 set number
 
+" To insert space char whenever the tab key is pressed.
+set expandtab
 "tab长度
 set tabstop=2
 "缩进宽度为4

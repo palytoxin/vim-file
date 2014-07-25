@@ -64,6 +64,11 @@ set tabstop=2
 set shiftwidth=2
 set smarttab
 
+" 根据缩进设置折叠
+set foldmethod=syntax
+"打开文件默认不折叠代码
+set foldlevelstart=99
+
 "覆盖文件无备份
 set nobackup
 

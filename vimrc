@@ -166,8 +166,17 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
 "========================>shift tab pages
-nnoremap <S-Left> :tabp<CR>
-nnoremap <S-Right> :tabn<CR>
+"nnoremap <S-Left> :tabp<CR>
+"nnoremap <S-Right> :tabn<CR>
+" shortcuts conflict with konsole 
+
+" 现在可以使用gt/gT左右切换tab
+" :tabnew  打开文件
+" :tabc    关闭当前的tab
+" :tabo    关闭所有其他的tab
+" :tabs    查看所有打开的tab
+" :tabp    前一个
+" :tabn    后一个
 
 "========================>NerdTree
 nnoremap <leader>ww :silent! NERDTreeToggle<CR>

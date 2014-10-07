@@ -64,6 +64,11 @@ set tabstop=2
 set shiftwidth=2
 set smarttab
 
+" 根据缩进设置折叠
+set foldmethod=syntax
+"打开文件默认不折叠代码
+set foldlevelstart=99
+
 "覆盖文件无备份
 set nobackup
 
@@ -166,8 +171,17 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
 "========================>shift tab pages
-nnoremap <S-Left> :tabp<CR>
-nnoremap <S-Right> :tabn<CR>
+"nnoremap <S-Left> :tabp<CR>
+"nnoremap <S-Right> :tabn<CR>
+" shortcuts conflict with konsole 
+
+" 现在可以使用gt/gT左右切换tab
+" :tabnew  打开文件
+" :tabc    关闭当前的tab
+" :tabo    关闭所有其他的tab
+" :tabs    查看所有打开的tab
+" :tabp    前一个
+" :tabn    后一个
 
 "========================>NerdTree
 nnoremap <leader>ww :silent! NERDTreeToggle<CR>

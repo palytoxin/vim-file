@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/yan/.vim/bundle'
+let g:netrw_dirhist_2='/Users/yan/Documents/CodeResources/prdemo'
+let g:netrw_dirhist_3='/usr/local/etc/my.cnf.d'
+let g:netrw_dirhist_4='/Users/yan/Library/Application Support/Firefox/profiles'

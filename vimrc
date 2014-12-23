@@ -41,7 +41,7 @@ let g:solarized_termcolors=256
 set hlsearch
 
 "Mouse Support
-set mouse=a
+"set mouse=a
 
 "关闭兼容模式
 set nocompatible

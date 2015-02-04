@@ -138,7 +138,7 @@ Plugin 'FencView.vim' " GBK support
 
 " [NerdTree]
 Plugin 'scrooloose/nerdtree'
-nnoremap <leader>ww :silent! NERDTreeToggle<CR>
+nnoremap <leader>w :silent! NERDTreeToggle<CR>
 "I can close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -164,6 +164,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'taglist.vim' " ctags support
 let Tlist_Show_One_File=1  
 let Tlist_Exit_OnlyWindow=1 
+nnoremap <leader>t :TlistToggle<CR>
 
 
 "***********************************************

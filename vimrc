@@ -14,9 +14,14 @@
 "*                                             *
 "***********************************************
 let mapleader="," "修改leader键为逗号
-set fenc=utf-8 " 设置文件编码
-set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936 " 设置文件编码检测类型及支持格式
-set fileencodings=utf-8 "中文
+"enc(encoding), fenc(fileencoding), fencs(fileencodings)
+"enc 先是当前系统编码
+"fenc 当前文件的编码
+"fencs 打开文件后的猜测列表
+set enc=utf-8
+set fenc=utf-8
+set fencs=cp936,gbk,gb2312,gb18030,ucs-bom,utf-8 " 探测文件编码检测类型及支持格式
+
 syntax on "自动语法高亮
 set go= "去除边框
 "set background=light " 背景色
@@ -134,7 +139,8 @@ let g:airline_theme                      = "bubblegum" "设定主题
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " [FencView]
-Plugin 'FencView.vim' " GBK support
+Plugin 'MwumLi/fencview' " encoding detect support
+let g:fencview_autodetect=0 "关闭自动检测
 
 " [NerdTree]
 Plugin 'scrooloose/nerdtree'

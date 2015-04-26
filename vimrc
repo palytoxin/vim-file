@@ -125,6 +125,7 @@ Plugin 'L9'
 Plugin 'kien/ctrlp.vim'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
 " [vim-airline]
@@ -175,6 +176,15 @@ Plugin 'taglist.vim' " ctags support
 let Tlist_Show_One_File=1  
 let Tlist_Exit_OnlyWindow=1 
 nnoremap <leader>t :TlistToggle<CR>
+
+" [tagbar]
+Plugin 'majutsushi/tagbar'
+let g:tagbar_width=35
+let g:tagbar_autofocus=1
+nnoremap <leader>t :TagbarToggle<CR>
+
+" [tabular]
+Plugin 'godlygeek/tabular'
 
 
 "***********************************************

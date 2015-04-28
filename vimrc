@@ -23,6 +23,11 @@ set fenc=utf-8
 set fencs=cp936,gbk,gb2312,gb18030,ucs-bom,utf-8 " 探测文件编码检测类型及支持格式
 
 syntax on "自动语法高亮
+
+"检测文件插件类型
+filetype plugin on
+filetype indent on
+
 set go= "去除边框
 "set background=light " 背景色
 
@@ -37,9 +42,6 @@ set hlsearch "搜索高亮
 set nocompatible "关闭兼容模式
 filetype on "检测文件类型
 
-"检测文件插件类型
-filetype plugin on
-filetype indent on
 
 set number "显示行号
 set expandtab " To insert space char whenever the tab key is pressed.
@@ -186,6 +188,8 @@ nnoremap <leader>t :TagbarToggle<CR>
 " [tabular]
 Plugin 'godlygeek/tabular'
 
+" [vim-coffee-script]
+Plugin 'kchmck/vim-coffee-script'
 
 "***********************************************
 "*                                             *

@@ -87,17 +87,18 @@ autocmd BufReadPost *
 " :PluginSearch(!) foo - search (or refresh cache first) for foo
 " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
 
-set nocompatible               " be iMproved, required
 set backspace=indent,eol,start " solution Backspace in insert mode doesn't erase the character
+set nocompatible               " be iMproved, required
 filetype off                   " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" call vundle#rc()
 " alternatively, pass a path where Vundle should install plugins
 "let path = '~/some/path/here'
 "call vundle#rc(path)
 
+call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
@@ -113,12 +114,6 @@ Plugin 'tpope/vim-fugitive' " vim-Git plugin
 " [vim-easymotion]
 Plugin 'Lokaltog/vim-easymotion'
 let g:EasyMotion_leader_key = '<Leader>' 
-
-" [vim-rails]
-Plugin 'tpope/vim-rails.git'
-
-" [sparkup, rails]
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " rails -erb.html plugin
 
 " [L9]
 Plugin 'L9'
@@ -188,8 +183,20 @@ nnoremap <leader>t :TagbarToggle<CR>
 " [tabular]
 Plugin 'godlygeek/tabular'
 
+" [vim-rails]
+Plugin 'tpope/vim-rails.git'
+
+" [sparkup, rails]
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " rails -erb.html plugin
+
 " [vim-coffee-script]
 Plugin 'kchmck/vim-coffee-script'
+
+" [mattn/emmet-vim]
+Plugin 'mattn/emmet-vim'
+
+call vundle#end()
+filetype plugin indent on 
 
 "***********************************************
 "*                                             *

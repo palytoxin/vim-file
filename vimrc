@@ -185,6 +185,9 @@ Plugin 'godlygeek/tabular'
 
 " [vim-rails]
 Plugin 'tpope/vim-rails.git'
+let g:syntastic_eruby_ruby_quiet_messages =
+    \ {'regex': 'possibly useless use of a variable in void context'}
+
 
 " [sparkup, rails]
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " rails -erb.html plugin
@@ -197,15 +200,17 @@ Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on 
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 
 "***********************************************
 "*                                             *
 "*           vim shortcut settings             *
 "*                                             *
 "***********************************************
-filetype plugin indent on     " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+
+" Use ack instead of grep
+set grepprg=ack
 
 "[Smart way to move between windows]
 nnoremap <C-j> <C-W>j

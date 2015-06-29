@@ -13,6 +13,11 @@
 "*                vim settings                 *
 "*                                             *
 "***********************************************
+" This issue is due to Vim’s need of setting a different term parameter when ran through Tmux. 
+if exists('$TMUX')
+  set term=screen-256color
+endif
+
 let mapleader="," "修改leader键为逗号
 "enc(encoding), fenc(fileencoding), fencs(fileencodings)
 "enc 先是当前系统编码
@@ -33,7 +38,6 @@ set go= "去除边框
 
 " 主题
 set background=dark
-colorscheme solarized
 let g:solarized_termcolors=256
 
 "set guifont=Monaco:h10 "字体

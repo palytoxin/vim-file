@@ -44,7 +44,7 @@ let g:solarized_termcolors=256
 set hlsearch "搜索高亮
 "set mouse=a "Mouse Support
 set nocompatible "关闭兼容模式
-filetype on "检测文件类型
+"filetype on "检测文件类型 vundle管理用
 
 
 set number "显示行号
@@ -97,14 +97,12 @@ filetype off                   " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
-" call vundle#rc()
 " alternatively, pass a path where Vundle should install plugins
-"let path = '~/some/path/here'
-"call vundle#rc(path)
 
 call vundle#begin()
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
+"Plugin 'gmarik/vundle'
 
 "***********************************************
 "*                                             *
@@ -204,6 +202,7 @@ Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on 
+" All of your Plugins must be added before the following line"
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 

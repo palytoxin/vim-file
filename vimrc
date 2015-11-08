@@ -26,6 +26,8 @@ let mapleader="," "修改leader键为逗号
 set enc=utf-8
 set fenc=utf-8
 set fencs=cp936,gbk,gb2312,gb18030,ucs-bom,utf-8 " 探测文件编码检测类型及支持格式
+" 系统剪贴板
+set clipboard=unnamed
 
 syntax on "自动语法高亮
 
@@ -102,7 +104,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'gmarik/vundle'
 
 "***********************************************
 "*                                             *
@@ -220,6 +221,9 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
+
+" Enable folding with the spacebar
+nnoremap <space> za
 
 "[shift tab pages]
 "nnoremap <S-Left> :tabp<CR>

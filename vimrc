@@ -28,8 +28,6 @@ set fenc=utf-8
 set fencs=cp936,gbk,gb2312,gb18030,ucs-bom,utf-8 " 探测文件编码检测类型及支持格式
 " 系统剪贴板
 set clipboard=unnamed
-" copy mode
-set paste
 
 syntax on "自动语法高亮
 

@@ -1,24 +1,52 @@
-" ========================================================================
-" Yan's vimrc!
-" Vunble Install Quick start
-" Setup Vundle:
-" 1.
-"  $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-" 2.
-"  use 'BundleInstall!' force update plugins
-" ========================================================================
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Maintainer:
+"   Yan's vimrc!
+"
+" Vunble Install Quick start:
+"   Setup Vundle:
+"   1.
+"     $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"   2.
+"     use 'BundleInstall!' force update plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"***********************************************
-"*                                             *
-"*                vim settings                 *
-"*                                             *
-"***********************************************
-" This issue is due to Vim’s need of setting a different term parameter when ran through Tmux. 
+" ***********************************************
+" *                                             *
+" *                vim settings                 *
+" *                                             *
+" ***********************************************
+" This issue is due to Vim’s need of setting a different term parameter when ran through Tmux
 if exists('$TMUX')
   set term=screen-256color
 endif
 
-let mapleader="," "修改leader键为逗号
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
+"修改leader键为逗号
+let mapleader=","
+let g:mapleader=","
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
+
+" Set 7 line to the cursor - when moving vertically using j/k
+set so=7
+
+" Always show current position
+set ruler
+
+" solution Backspace in insert mode doesn't erase the character
+set backspace=indent,eol,start
+
+" When searching try to be smart about cases
+set smartcase
+
+" No annoying soud on errors
+set noerrorbells
+set novisualbell
+
 "enc(encoding), fenc(fileencoding), fencs(fileencodings)
 "enc 先是当前系统编码
 "fenc 当前文件的编码
@@ -26,6 +54,7 @@ let mapleader="," "修改leader键为逗号
 set enc=utf-8
 set fenc=utf-8
 set fencs=cp936,gbk,gb2312,gb18030,ucs-bom,utf-8 " 探测文件编码检测类型及支持格式
+
 " 系统剪贴板
 set clipboard=unnamed
 
@@ -35,15 +64,6 @@ syntax on "自动语法高亮
 filetype plugin on
 filetype indent on
 
-set go= "去除边框
-"set background=light " 背景色
-
-" 主题
-set background=dark
-let g:solarized_termcolors=256
-
-"set guifont=Monaco:h10 "字体
-set hlsearch "搜索高亮
 "set mouse=a "Mouse Support
 set nocompatible "关闭兼容模式
 "filetype on "检测文件类型 vundle管理用
@@ -62,9 +82,10 @@ set nobackup "覆盖文件无备份
 "缩进
 set smartindent
 set autoindent
+set wrap
 
 set incsearch "设定即使搜索
-set history=60 "历史
+set history=500 "历史
 set cursorline "高亮编辑行
 set noswapfile "无交临时换文件
 set showcmd "show cmd
@@ -76,12 +97,26 @@ map <c-o> :CtrlPBuffer<CR> " ctrl+o for LRU buffer
 set isk+=-
 set iskeyword+=-
 
+
 "记录上次编辑位置
 autocmd BufReadPost *
 	\ if line("'\"") > 1 && line("'\"") <= line("$") |
 	\   exe "normal! g`\"" |
 	\ endif
+" ***********************************************
+" *                                             *
+" *          vim color/theme setting            *
+" *                                             *
+" ***********************************************
+set go= "去除边框
+"set background=light " 背景色
 
+" 主题
+set background=dark
+let g:solarized_termcolors=256
+set hlsearch "搜索高亮
+
+"set guifont=Monaco:h10 "字体
 "***********************************************
 "*                                             *
 "*             Vundle settings                 *
@@ -93,7 +128,6 @@ autocmd BufReadPost *
 " :PluginSearch(!) foo - search (or refresh cache first) for foo
 " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
 
-set backspace=indent,eol,start " solution Backspace in insert mode doesn't erase the character
 set nocompatible               " be iMproved, required
 filetype off                   " required
 
@@ -116,7 +150,7 @@ Plugin 'tpope/vim-fugitive' " vim-Git plugin
 
 " [vim-easymotion]
 Plugin 'Lokaltog/vim-easymotion'
-let g:EasyMotion_leader_key = '<Leader>' 
+let g:EasyMotion_leader_key = '<Leader>'
 
 " [L9]
 Plugin 'L9'
@@ -173,8 +207,8 @@ Plugin 'jiangmiao/auto-pairs'
 
 " [tagslist]
 Plugin 'taglist.vim' " ctags support
-let Tlist_Show_One_File=1  
-let Tlist_Exit_OnlyWindow=1 
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
 nnoremap <leader>t :TlistToggle<CR>
 
 " [tagbar]
@@ -202,7 +236,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/emmet-vim'
 
 call vundle#end()
-filetype plugin indent on 
+filetype plugin indent on
 " All of your Plugins must be added before the following line"
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -228,7 +262,7 @@ nnoremap <space> za
 "[shift tab pages]
 "nnoremap <S-Left> :tabp<CR>
 "nnoremap <S-Right> :tabn<CR>
-" shortcuts conflict with konsole 
+" shortcuts conflict with konsole
 
 "[help]
 " 现在可以使用gt/gT左右切换tab

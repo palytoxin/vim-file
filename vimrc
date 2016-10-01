@@ -169,7 +169,7 @@ set t_Co=256
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 0
 "let g:airline_detect_whitespace          = 0 "关闭空白符检测
-let g:airline_theme                      = "bubblegum" "设定主题
+"let g:airline_theme                      = "bubblegum" "设定主题
 "let g:airline#extensions#tabline#left_sep = ' '
 "let g:airline#extensions#tabline#left_alt_sep = '|'
 

@@ -60,7 +60,7 @@ syntax on "自动语法高亮
 filetype plugin on
 filetype indent on
 
-"set mouse=a "Mouse Support
+set mouse=a "Mouse Support
 set nocompatible "关闭兼容模式
 
 set number "显示行号
@@ -103,7 +103,7 @@ let g:solarized_termcolors=256
 set hlsearch "搜索高亮
 
 " Use ack instead of grep
-set grepprg=ack
+" set grepprg=ack
 
 "[Smart way to move between windows]
 nnoremap <C-j> <C-W>j
@@ -125,12 +125,15 @@ nnoremap <space> za
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
-
 " Declare the list of plugins.
-Plug 'tpope/vim-fugitive'
+
+Plug 'vim-scripts/L9'
+
+"Plug 'tpope/vim-fugitive'
 
 Plug 'Lokaltog/vim-easymotion'
-let g:EasyMotion_leader_key = '<Leader>'
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 Plug 'ctrlpvim/ctrlp.vim'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linuxlet g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -142,33 +145,34 @@ let g:ctrlp_custom_ignore = {
 " let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
 Plug 'bling/vim-airline'
-let g:airline_powerline_fonts = 0
-set t_Co=256
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 0
-"let g:airline_detect_whitespace          = 0 "关闭空白符检测
-"let g:airline_theme                      = "bubblegum" "设定主题
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 Plug 'MwumLi/fencview'
 let g:fencview_autodetect=0 "关闭自动检测
 
 Plug 'scrooloose/nerdtree'
-nnoremap <leader>w :silent! NERDTreeToggle<CR>
 "I can close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+map <Leader>w <plug>NERDTreeTabsToggle<CR>
+map <Leader>t <plug>NERDTreeTabsFind<CR>
 
 Plug 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
+Plug 'MarcWeber/vim-addon-mw-utils'
 
 Plug 'mileszs/ack.vim'
+nnoremap <Leader>a :Ack!<space>-i<space>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim'
 Plug 'garbas/vim-snipmate'
 Plug 'tomtom/tcomment_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 Plug 'ngmy/vim-rubocop'
 
 " List ends here. Plugins become visible to Vim after this call.

@@ -52,7 +52,7 @@ set fencs=utf8,gbk,gb2312,gb18030
 " 探测文件编码检测类型及支持格式
 
 " 系统剪贴板
-set clipboard=unnamed
+" set clipboard=unnamed
 
 syntax on "自动语法高亮
 
@@ -132,14 +132,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/vim-easymotion'
 let g:EasyMotion_leader_key = '<Leader>'
 
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linuxlet g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+" let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
 Plug 'bling/vim-airline'
 let g:airline_powerline_fonts = 0
@@ -169,6 +169,7 @@ Plug 'mattn/emmet-vim'
 Plug 'garbas/vim-snipmate'
 Plug 'tomtom/tcomment_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'ngmy/vim-rubocop'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

@@ -52,7 +52,7 @@ set fencs=utf8,gbk,gb2312,gb18030
 " 探测文件编码检测类型及支持格式
 
 " 系统剪贴板
-" set clipboard=unnamed
+set clipboard=unnamed
 
 syntax on "自动语法高亮
 
@@ -128,8 +128,10 @@ call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 
 Plug 'vim-scripts/L9'
+Plug 'godlygeek/tabular'
+Plug 'tomtom/tcomment_vim'
 
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 Plug 'Lokaltog/vim-easymotion'
 map  <Leader>f <Plug>(easymotion-bd-f)
@@ -167,9 +169,38 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+Plug 'majutsushi/tagbar'
+nnoremap <Leader>r :TagbarToggle<CR>
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
+if executable('ripper-tags')
+  let g:tagbar_type_ruby = {
+      \ 'kinds'      : ['m:modules',
+                      \ 'c:classes',
+                      \ 'C:constants',
+                      \ 'F:singleton methods',
+                      \ 'f:methods',
+                      \ 'a:aliases'],
+      \ 'kind2scope' : { 'c' : 'class',
+                       \ 'm' : 'class' },
+      \ 'scope2kind' : { 'class' : 'c' },
+      \ 'ctagsbin'   : 'ripper-tags',
+      \ 'ctagsargs'  : ['-f', '-']
+      \ }
+endif
+
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
-Plug 'garbas/vim-snipmate'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'

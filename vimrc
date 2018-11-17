@@ -14,6 +14,8 @@
 if exists('$TMUX')
   set term=screen-256color
 endif
+" set listchars=eol:¬,extends:>,precedes:<,space:␣
+" set list
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
@@ -27,7 +29,7 @@ let g:mapleader=","
 map <silent> <leader><cr> :noh<cr>
 
 " Set 7 line to the cursor - when moving vertically using j/k
-set so=7
+set so=3
 
 " Always show current position
 set ruler
@@ -144,7 +146,13 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-" let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+if executable('find')
+  let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+endif
+if executable('fd')
+    let g:ctrlp_user_command = 'fd -I -H --type f -c never "" %s'
+    let g:ctrlp_use_caching = 0
+endif
 
 Plug 'bling/vim-airline'
 

@@ -168,7 +168,19 @@ map <Leader>w <plug>NERDTreeTabsToggle<CR>
 map <Leader>t <plug>NERDTreeTabsFind<CR>
 
 Plug 'scrooloose/syntastic'
-let g:syntastic_check_on_open=1
+" let g:syntastic_javascript_checkers = ['eslint']
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+Plug 'Chiel92/vim-autoformat'
+let g:formatdef_eslint = '"SRC=eslint-temp-${RANDOM}.js; cat - >$SRC; eslint --fix $SRC >/dev/null 2>&1; cat $SRC | perl -pe \"chomp if eof\"; rm -f $SRC"'
+let g:formatters_javascript = ['eslint']
 Plug 'MarcWeber/vim-addon-mw-utils'
 
 Plug 'mileszs/ack.vim'
@@ -213,6 +225,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'ngmy/vim-rubocop'
+Plug 'posva/vim-vue'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

@@ -140,8 +140,8 @@ map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-" nmap <C-p> <Plug>(LeaderfFile)
-nmap <C-p> :LeaderfFile<CR>
+let g:Lf_ShortcutF = '<C-P>'
+let g:Lf_ShowHidden=1
 let g:Lf_ReverseOrder = 1
 " Plug 'ctrlpvim/ctrlp.vim'
 " set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linuxlet g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'

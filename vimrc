@@ -139,20 +139,24 @@ Plug 'Lokaltog/vim-easymotion'
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 
-Plug 'ctrlpvim/ctrlp.vim'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linuxlet g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-if executable('find')
-  let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-endif
-if executable('fd')
-    let g:ctrlp_user_command = 'fd -I -H --type f -c never "" %s'
-    let g:ctrlp_use_caching = 0
-endif
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+" nmap <C-p> <Plug>(LeaderfFile)
+nmap <C-p> :LeaderfFile<CR>
+let g:Lf_ReverseOrder = 1
+" Plug 'ctrlpvim/ctrlp.vim'
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linuxlet g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" let g:ctrlp_custom_ignore = {
+" \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+" \ 'file': '\v\.(exe|so|dll)$',
+" \ 'link': 'some_bad_symbolic_links',
+" \ }
+" if executable('find')
+" let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+" endif
+" if executable('fd')
+" let g:ctrlp_user_command = 'fd -I -H --type f -c never "" %s'
+" let g:ctrlp_use_caching = 0
+" endif
 
 Plug 'bling/vim-airline'
 
@@ -221,11 +225,13 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'tomtom/tcomment_vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'ngmy/vim-rubocop'
 Plug 'posva/vim-vue'
+Plug 'maralla/completor.vim'
+Plug 'masawada/completor-dictionary'
+autocmd FileType * execute 'setlocal dictionary='.expand($HOME.'/.vim/dict/'.&filetype.'.dict')
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
